@@ -35,7 +35,7 @@ return {
 
       return {
         options = {
-          theme = "catppuccin",
+          theme = "auto",
           globalstatus = true, -- 全局状态栏
           component_separators = { left = "|", right = "|" },
           section_separators = { left = "", right = "" },
@@ -48,7 +48,7 @@ return {
           lualine_a = { "mode" },
           lualine_b = { "branch", "diff" },
           lualine_c = {
-            { "filename", path = 4 }, -- 显示完整文件路径
+            { "filename", path = 1 }, -- 1=相对路径, 2=绝对路径, 3=绝对路径(缩短$HOME)
           },
 
           -- 右侧: 诊断 + LSP + 位置 + 编码 + 换行符 + 时间
@@ -67,7 +67,7 @@ return {
         },
         inactive_sections = {
           lualine_c = {
-            { "filename", path = 4 },
+            { "filename", path = 1 },
           },
           lualine_x = { "location" },
         },

@@ -3,7 +3,7 @@ local opt = vim.opt
 
 -- 编辑器基础设置
 opt.number = true -- 行号
-opt.relativenumber = true -- 相对行号
+opt.relativenumber = false -- 禁用相对行号
 opt.cursorline = true -- 高亮当前行
 -- opt.colorcolumn = "100" -- 100 字符参考线（已禁用）
 

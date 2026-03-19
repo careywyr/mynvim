@@ -26,32 +26,13 @@ return {
       picker = {
         sources = {
           files = {
-            hidden = false,
-            ignored = false,
-            exclude = {
-              "target", "build", "dist", "out",
-              "node_modules", ".git", "__pycache__",
-              "*.class", "*.jar", "*.war", "*.ear",
-              "*.pyc", ".idea", ".vscode",
-            },
+            hidden = true, -- 搜索隐藏文件（如 .gitignore）
           },
           git_files = {},
           grep = {
-            exclude = {
-              "target", "build", "dist", "out",
-              "node_modules", ".git", "__pycache__",
-              "*.class", "*.jar", "*.war", "*.ear",
-              "*.pyc", ".idea", ".vscode",
-            },
+            hidden = true,
           },
-          explorer = {
-            exclude = {
-              "target", "build", "dist", "out",
-              "node_modules", ".git", "__pycache__",
-              "*.class", "*.jar", "*.war", "*.ear",
-              "*.pyc", ".idea", ".vscode",
-            },
-          },
+          explorer = {},
           buffers = {},
           oldfiles = {},
         },

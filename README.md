@@ -30,7 +30,6 @@ build/
 dist/
 out/
 node_modules/
-.git/
 __pycache__/
 .idea/
 .vscode/
@@ -40,10 +39,25 @@ __pycache__/
 *.ear
 *.pyc
 *.pyo
+
+# jdtls / Eclipse
+.settings/
+.project
+.classpath
+.factorypath
 EOF
 
 # 启动 Neovim（自动安装插件）
 nvim
+```
+
+### Java LSP 配置
+
+Java LSP (jdtls) 需要 Java 21+ 运行。配置已设置为使用独立的 Java 21，不影响系统 `JAVA_HOME`。
+
+如需修改 Java 21 路径，编辑 `lua/plugins/lsp.lua` 中的：
+```lua
+vim.env.JAVA_HOME = "/Users/leafw/Documents/env/jdk-21.0.10.jdk/Contents/Home"
 ```
 
 ### 安装 LSP 服务器
@@ -53,7 +67,7 @@ nvim
 - `pyright` - Python
 - `typescript-language-server` - TypeScript/JavaScript
 - `gopls` - Go
-- `jdtls` - Java
+- `jdtls` - Java（需要 Java 21+）
 
 ## 快捷键
 
@@ -101,10 +115,33 @@ nvim
 | 快捷键 | 功能 |
 |--------|------|
 | `gd` | 跳转到定义 |
-| `gr` | 查看引用 |
+| `gD` | 跳转到声明 |
+| `gI` | 跳转到实现 |
+| `gy` | 跳转到类型定义 |
+| `gr` | 查看所有引用 |
 | `K` | 显示悬浮文档 |
+| `gK` | 显示签名帮助 |
 | `<leader>ca` | 代码操作 (Code Action) |
 | `<leader>cr` | 重命名符号 |
+| `<leader>cf` | 格式化代码 |
+| `]d` | 下一个诊断 |
+| `[d` | 上一个诊断 |
+
+### 跳转导航
+
+| 快捷键 | 功能 |
+|--------|------|
+| `<C-o>` | 跳回上一个位置 |
+| `<C-i>` | 跳到下一个位置 |
+| `%` | 跳转到匹配的括号 |
+| `gg` | 跳转到文件开头 |
+| `G` | 跳转到文件末尾 |
+| `{数字}G` | 跳转到指定行 |
+| `zz` | 将当前行居中显示 |
+| `*` | 搜索光标下的单词（向下） |
+| `#` | 搜索光标下的单词（向上） |
+| `n` | 下一个搜索结果 |
+| `N` | 上一个搜索结果 |
 
 ### Git
 

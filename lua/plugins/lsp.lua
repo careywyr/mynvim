@@ -17,4 +17,13 @@ return {
       automatic_installation = false,
     },
   },
+
+  -- jdtls 配置：指定 Java 21 路径运行 jdtls
+  {
+    "mfussenegger/nvim-jdtls",
+    init = function()
+      -- 仅为 jdtls 设置 JAVA_HOME，不影响系统环境
+      vim.env.JAVA_HOME = "/Users/leafw/Documents/env/jdk-21.0.10.jdk/Contents/Home"
+    end,
+  },
 }
