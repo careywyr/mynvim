@@ -1,10 +1,20 @@
 -- 核心功能配置
 return {
-  -- 启用 tokyonight 主题
+  -- Catppuccin 主题
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    opts = {
+      flavour = "mocha", -- latte, frappe, macchiato, mocha
+      transparent_background = true, -- 透明背景
+    },
+  },
+
+  -- 设置默认主题
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "catppuccin",
     },
   },
 
@@ -15,11 +25,35 @@ return {
       -- Picker 配置（替代 Telescope）
       picker = {
         sources = {
-          files = { live_filter = true },
-          git_files = { live_filter = true },
-          grep = { live_filter = true },
-          buffers = { live_filter = true },
-          oldfiles = { live_filter = true },
+          files = {
+            hidden = false,
+            ignored = false,
+            exclude = {
+              "target", "build", "dist", "out",
+              "node_modules", ".git", "__pycache__",
+              "*.class", "*.jar", "*.war", "*.ear",
+              "*.pyc", ".idea", ".vscode",
+            },
+          },
+          git_files = {},
+          grep = {
+            exclude = {
+              "target", "build", "dist", "out",
+              "node_modules", ".git", "__pycache__",
+              "*.class", "*.jar", "*.war", "*.ear",
+              "*.pyc", ".idea", ".vscode",
+            },
+          },
+          explorer = {
+            exclude = {
+              "target", "build", "dist", "out",
+              "node_modules", ".git", "__pycache__",
+              "*.class", "*.jar", "*.war", "*.ear",
+              "*.pyc", ".idea", ".vscode",
+            },
+          },
+          buffers = {},
+          oldfiles = {},
         },
         wins = {
           input = {

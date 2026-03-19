@@ -35,7 +35,7 @@ return {
 
       return {
         options = {
-          theme = "tokyonight",
+          theme = "catppuccin",
           globalstatus = true, -- 全局状态栏
           component_separators = { left = "|", right = "|" },
           section_separators = { left = "", right = "" },

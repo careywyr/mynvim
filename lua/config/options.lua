@@ -35,3 +35,16 @@ opt.mouse = "a" -- 启用鼠标支持
 
 -- 禁用 LazyVim 自动根目录检测，使用当前工作目录 (cwd)
 vim.g.root_spec = { "cwd" }
+
+-- 透明背景（支持终端毛玻璃效果）
+vim.api.nvim_create_autocmd("ColorScheme", {
+    callback = function()
+        vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+        vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
+        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+        vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
+        vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
+        vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE" })
+        vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE" })
+    end,
+})
